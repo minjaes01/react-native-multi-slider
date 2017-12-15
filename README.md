@@ -22,5 +22,5 @@ react-native run-android
 ### Installation
 
 ```bash
-$ npm install --save @ptomasroos/react-native-multi-slider
+$ npm install --save minjaes01/react-native-multi-slider
 ```
