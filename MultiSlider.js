@@ -385,6 +385,7 @@ export default class MultiSlider extends React.Component {
       left: 0,
       right: 0,
       position: 'absolute',
+      backgroundColor: 'gold',
     };
 
     const markerContainerOne = {
@@ -403,7 +404,6 @@ export default class MultiSlider extends React.Component {
       top: markerOffsetY - 12,
       left: trackOneLength + markerOffsetX,
       width: trackTwoLength,
-      backgroundColor: 'gold',
     };
 
     return (
