@@ -377,6 +377,7 @@ export default class MultiSlider extends React.Component {
     const { slipDisplacement, height, width, borderRadius } = this.props.touchDimensions;
     const touchStyle = {
       ...this.props.touchDimensions,
+      backgroundColor: 'powderblue'
     };
 
     const touchMiddleStyle = {
@@ -402,6 +403,7 @@ export default class MultiSlider extends React.Component {
       top: markerOffsetY - 12,
       left: trackOneLength + markerOffsetX,
       width: trackTwoLength,
+      backgroundColor: 'gold',
     };
 
     return (
@@ -433,7 +435,7 @@ export default class MultiSlider extends React.Component {
               ]}
             >
               <View
-                style={touchMiddleStyle}
+                style={[ styles.touch, touchMiddleStyle]}
                 ref={component => (this._markerMiddle = component)}
                 {...this._panResponderMiddle.panHandlers}
               />
