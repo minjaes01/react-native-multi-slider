@@ -195,10 +195,7 @@ export default class MultiSlider extends React.Component {
     var valueTwo = positionToValue(pastTwo, this.optionsArray, this.props.sliderLength);
 
     const diff = valueTwo - value;
-    if (
-      this.props.enabledTwo &&
-      ((diff < 2 && gestureState.dx > 0) || (diff > 6 && gestureState.dx < 0))
-    ) {
+    if ((diff < 2 && gestureState.dx > 0) || (diff > 6 && gestureState.dx < 0)) {
       return;
     }
 
@@ -384,8 +381,8 @@ export default class MultiSlider extends React.Component {
 
     const touchMiddleStyle = {
       height,
-      left: 0,
-      right: 0,
+      left: 10,
+      right: 10,
       position: 'absolute',
     };
 
@@ -425,22 +422,6 @@ export default class MultiSlider extends React.Component {
                 { width: trackThreeLength },
               ]}
             />
-          )}
-
-          {twoMarkers && (
-            <View
-              style={[
-                styles.markerContainer,
-                markerContainerMiddle,
-                this.props.markerContainerStyle,
-              ]}
-            >
-              <View
-                style={[styles.touch, touchMiddleStyle]}
-                ref={component => (this._markerMiddle = component)}
-                {...this._panResponderMiddle.panHandlers}
-              />
-            </View>
           )}
           <View
             style={[
@@ -492,6 +473,22 @@ export default class MultiSlider extends React.Component {
                 </View>
               </View>
             )}
+
+          {twoMarkers && (
+            <View
+              style={[
+                styles.markerContainer,
+                markerContainerMiddle,
+                this.props.markerContainerStyle,
+              ]}
+            >
+              <View
+                style={[styles.touch, touchMiddleStyle]}
+                ref={component => (this._markerMiddle = component)}
+                {...this._panResponderMiddle.panHandlers}
+              />
+            </View>
+          )}
         </View>
       </View>
     );
