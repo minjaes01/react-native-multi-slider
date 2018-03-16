@@ -499,6 +499,7 @@ const styles = StyleSheet.create({
   container: {
     position: 'relative',
     height: 50,
+    backgroundColor: '#fff',
   },
   fullTrack: {
     flexDirection: 'row',
