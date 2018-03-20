@@ -195,7 +195,10 @@ export default class MultiSlider extends React.Component {
     var valueTwo = positionToValue(pastTwo, this.optionsArray, this.props.sliderLength);
 
     const diff = valueTwo - value;
-    if ((diff < 2 && gestureState.dx > 0) || (diff > 6 && gestureState.dx < 0)) {
+    if (
+      this.state.valueTwo !== undefined &&
+      ((diff < 2 && gestureState.dx > 0) || (diff > 6 && gestureState.dx < 0))
+    ) {
       return;
     }
 
@@ -499,7 +502,6 @@ const styles = StyleSheet.create({
   container: {
     position: 'relative',
     height: 50,
-    backgroundColor: '#fff',
   },
   fullTrack: {
     flexDirection: 'row',
