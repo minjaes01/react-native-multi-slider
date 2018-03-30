@@ -381,6 +381,7 @@ export default class MultiSlider extends React.Component {
     const touchStyle = {
       ...this.props.touchDimensions,
     };
+    delete touchStyle['slipDisplacement']
 
     const touchMiddleStyle = {
       height,
